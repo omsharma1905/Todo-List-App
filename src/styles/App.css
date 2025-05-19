@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100%;
+  background: url('/public/bg-todo.jpg') center center / cover no-repeat fixed;
+  background-color: #f5f5f5;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+
+/* DARK MODE */
+.app.dark {
+  background: rgba(25, 25, 25, 0.5);
+  color: #f1f1f1;
+}
+
+.app.dark h1 {
+  color: #ffffff;
+}
+
+.app.dark .task-form input,
+.app.dark .task-form select,
+.app.dark .task input[type="text"] {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f1f1;
+  border: 1px solid #666;
+}
+
+.app.dark select option {
+  background-color: #444444;
+  color: #f1f1f1;
+}
+
+.app.dark .task {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app.dark .filter-buttons button {
+  background-color: #333;
+  color: #ddd;
+}
+
+.app.dark .filter-buttons .active {
+  background-color: #607d8b;
+  color: #fff;
+}
+
+.app.dark .task button,
+.app.dark .theme-toggle,
+.app.dark .task-form button {
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+/* HEADER */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-buttons button,
+.theme-toggle {
+  background: #e3e8f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.filter-buttons .active {
+  background: #2d6cdf;
+  color: white;
+}
+
+.theme-toggle {
+  background: #5c6bc0;
+  color: white;
+}
+
+/* TASK FORM */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.task-form input,
+.task-form select {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #222;
+}
+
+.task-form select option {
+  background: white;
+  color: #222;
+}
+
+.task-form button {
+  background-color: #2d6cdf;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #1b4fc7;
+}
+
+/* TASK LIST */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+/* Task checkbox and text */
+.task-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 0;
+  transform: scale(1.2);
+  accent-color: #2d6cdf;
+  flex-shrink: 0;
+}
+
+.task span {
+  flex: 1;
+  font-size: 1rem;
+  color: #222;
+  word-break: break-word;
+}
+
+.task.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task input[type="text"] {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* PRIORITY PILL */
+.priority {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.priority.high {
+  background-color: #ef5350;
+}
+
+.priority.medium {
+  background-color: #fbc02d;
+  color: #222;
+}
+
+.priority.low {
+  background-color: #4caf50;
+}
+
+/* ACTION BUTTONS */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.task-actions button:hover {
+  background-color: #303f9f;
+}
+
+.task-actions button i {
+  font-size: 0.85rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+  .app {
+    padding: 1.5rem;
+  }
+
+  .task-form,
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-left {
+    width: 100%;
+  }
+
+  .task-actions {
+    justify-content: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .task-actions button {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .task span,
+  .task .priority {
+    width: 100%;
+    text-align: left;
+  }
+
+  .task input[type="checkbox"] {
+    align-self: flex-start;
+  }
+}
