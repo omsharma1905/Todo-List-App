@@ -24,7 +24,7 @@ cd Todo-List-App
 ### Step 2: Install dependencies:
 npm install
 
-### **Step 3: Start the development server:
+### Step 3: Start the development server:
 npm start
 Now open your browser and go to: http://localhost:3000
 
