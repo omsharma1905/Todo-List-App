@@ -19,7 +19,7 @@ It allows users to manage tasks with features like:
 
 ### Step 1: Clone the repository:
 git clone https://github.com/omsharma1905/Todo-List-App.git
---
+
 cd Todo-List-App
 
 ### Step 2: Install dependencies:
@@ -27,7 +27,7 @@ npm install
 
 ### Step 3: Start the development server:
 npm start
---
+
 Now open your browser and go to: http://localhost:3000
 
 ---
