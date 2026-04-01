@@ -5,7 +5,8 @@ It allows users to manage tasks with features like:
 
 - ✅ Add, edit, and delete tasks  
 - 📌 Set task priority: High, Medium, Low  
-- 🎯 Mark tasks as completed  
+- 🎯 Mark tasks as completed
+- 
 - 🔍 Filter tasks: All, Completed, Incomplete  
 - 🌗 Dark mode toggle (default on first load)  
 - 💾 Data persistence with `localStorage`  
