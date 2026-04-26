@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import React, { useState } from "react";
 
 const TaskList = ({ tasks, deleteTask, toggleComplete, editTask }) => {
   const [editId, setEditId] = useState(null);
